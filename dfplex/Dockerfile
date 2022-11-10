@@ -5,6 +5,7 @@ ENV DFPLEX_VERSION=0.2.1 \
     DFPLEX_ARCHIVE_SHA1=14b6d737162d43a3f266724299b40ef2315ae8b1 \
     DFHACK_HEADLESS=1 \
     DFHACK_DISABLE_CONSOLE=0
+WORKDIR /df_linux
 
 RUN curl -LSo dfplex.zip https://github.com/white-rabbit-dfplex/dfplex/releases/download/v${DFPLEX_VERSION}-dfplex/${DFPLEX_ARCHIVE_NAME}.zip \
  && (echo "${DFPLEX_ARCHIVE_SHA1} *dfplex.zip";) | sha1sum -c \
