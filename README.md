@@ -1,4 +1,10 @@
-# Dwarf Fortress in Docker
+# Dwarf Fortress + dfhack + dfplex in Docker
+
+USAGE:
+```
+docker run --security-opt=seccomp=unconfined -it -p 1234:1234 -p 8000:8000/tcp fullbl/dfplex:latest
+```
+
 
 Important note: if the host is running an OS with seccomp, such as Ubuntu 15.10 or later, you will need to add `--security-opt=seccomp=unconfined` or alter the [default Docker profile](https://github.com/docker/docker/blob/master/profiles/seccomp/default.json) to allow `personality(ADDR_NO_RANDOMIZE)` (0x0040000) to your dfhack container's run command.
 
