@@ -13,8 +13,13 @@ RUN curl -LSo dfplex.zip https://github.com/white-rabbit-dfplex/dfplex/releases/
  && cp -r ${DFPLEX_ARCHIVE_NAME}/* . \
  && rm -rf ${DFPLEX_ARCHIVE_NAME} dfplex.zip
 
-RUN echo "\n[PRINT_MODE:TEXT]\n[INTRO:NO]\n[TRUETYPE:NO]\n[SOUND:NO]" >> /df_linux/data/init/init.txt
+
+RUN curl -LSo hack/www/art/kruggsmash.png https://kruggsmash.com/wp-content/uploads/2019/03/kruggsmash.png
+
+RUN echo "\n[PRINT_MODE:TEXT]\n[SOUND:NO]" >> /df_linux/data/init/init.txt
+RUN echo "\n[AUTOSAVE:YEARLY]\n[INITIAL_SAVE:YES]" >> /df_linux/data/init/init_d.txt
 RUN echo "\n[BIRTH_CITIZEN:A_D:D_D]\n[MOOD_BUILDING_CLAIMED:A_D:D_D]\n[ARTIFACT_BEGUN:A_D:D_D]" >> /df_linux/data/init/announcements.txt
+
 EXPOSE 8000
 EXPOSE 5000
 EXPOSE 1234
