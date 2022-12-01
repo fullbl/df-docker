@@ -17,8 +17,8 @@ RUN curl -LSo dfplex.zip https://github.com/white-rabbit-dfplex/dfplex/releases/
 RUN curl -LSo hack/www/art/kruggsmash.png https://kruggsmash.com/wp-content/uploads/2019/03/kruggsmash.png
 
 RUN echo "\n[PRINT_MODE:TEXT]\n[SOUND:NO]" >> /df_linux/data/init/init.txt
-RUN echo "\n[AUTOSAVE:YEARLY]\n[INITIAL_SAVE:YES]" >> /df_linux/data/init/init_d.txt
-RUN echo "\n[BIRTH_CITIZEN:A_D:D_D]\n[MOOD_BUILDING_CLAIMED:A_D:D_D]\n[ARTIFACT_BEGUN:A_D:D_D]" >> /df_linux/data/init/announcements.txt
+RUN echo "\n[AUTOSAVE:SEASONAL]\n[INITIAL_SAVE:YES]" >> /df_linux/data/init/d_init.txt
+RUN echo "\n[BIRTH_CITIZEN:A_D:D_D]\n[MOOD_BUILDING_CLAIMED:A_D:D_D]\n[ARTIFACT_BEGUN:A_D:D_D]\n[DIG_CANCEL_WARM:A_D:D_D]\n[DIG_CANCEL_DAMP:A_D:D_D]" >> /df_linux/data/init/announcements.txt
 
 EXPOSE 8000
 EXPOSE 5000
